@@ -1,0 +1,158 @@
+POO2 - Encontro 03
+Introdução ao Java Spring Boot
+Receita de bolo
+
+-------------------------------------------------------------------------------
+
+Seguindo a apresentação de aula...
+
+- Realizar a configuração do Projeto em 
+https://start.spring.io/
+
+- Realizar o download do arquivo zip do projeto.
+
+- Criar o projeto Java na seguinte pasta:
+Projeto_API_Controle_Estoque
+
+- Começar a codificação das classes na estrutura.
+
+-------------------------------------------------------------------------------
+
+1a. Fase - Revisitando a estrutura
+
+Camada de Domínio
+- Package - domain
+- Classes
+- - BaseIdentificador.java
+- - ClasseProduto.java
+- - Produto.java
+- - SubclasseProduto.java
+
+Camada FakeDB
+- Package - fakedb
+- Classes
+- - BaseFakeDB.java
+- - ClasseProdutoFakeDB.java
+
+Camada Repositório
+- Package - repository
+- Classes
+- - BaseRepositorio.java
+- - ClasseProdutoRepositorio.java
+
+Camada Serviço
+- Package - service
+- Classes
+- - BaseServico.java
+- - ClasseProdutoServico.java
+
+Camada Controller
+- Package - controller
+- Classes
+- - ClasseProdutoController.java
+
+-------------------------------------------------------------------------------
+
+2a. Fase - Adaptações
+
+Camada de Domínio
+- Classe BaseIdentificador
+- - Adicionar as seguintes anotações:
+@MappedSuperclass
+@Id
+
+- Classe ClasseProduto.java
+- - Adicionar as seguintes anotações:
+@Entity
+
+---------------------------------------
+
+Camada FakeDB
+- Classe BaseFakeDB
+- - Adicionar as seguintes anotações:
+@MappedSuperclass
+
+---------------------------------------
+
+Camada de Repositório
+- Classe BaseRepositorio.java
+- - Adicionar as seguintes anotações:
+@MappedSuperclass
+
+---------------------------------------
+
+Camada Serviço
+- Classe BaseServico.java
+- - Adicionar as seguintes anotações:
+@MappedSuperclass
+
+- Classe ClasseProdutoServico.java
+- - Adicionar as seguintes anotações:
+@Service
+
+---------------------------------------
+
+Camada Controller
+- Classe ClasseProdutoController.java
+- - Adicionar as seguintes anotações:
+@RestController
+@RequestMapping("/api/estoque/classeproduto")
+
+- - Para o atributo ClasseProdutoServico, adicionar a anotação:
+@Autowired
+
+- - Para o método getAll, adicionar a anotação:
+@GetMapping
+
+- - Para o método getById, adicionar a anotação:
+@GetMapping("/{id}")
+
+- - Para o método post, adicionar a anotação:
+@PostMapping
+
+- - Para o método put, adicionar a anotação:
+@PutMapping
+
+- - Para o método delete, adicionar a anotação:
+@DeleteMapping("/{id}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
